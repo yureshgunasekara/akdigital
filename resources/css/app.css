@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+   .text24 {
+      @apply text-[24px];
+      line-height: 31px !important;
+   }
+   .text22 {
+      @apply text-[22px];
+      line-height: 29px !important;
+   }
+   .text20 {
+      @apply text-[20px];
+      line-height: 26px !important;
+   }
+   .text18 {
+      @apply text-[18px];
+      line-height: 23px !important;
+   }
+   .text16 {
+      @apply text-[16px];
+      line-height: 21px !important;
+   }
+   .text14 {
+      @apply text-[14px];
+      line-height: 18px !important;
+   }
+   .text12 {
+      @apply text-[12px];
+      line-height: 16px !important;
+   }
+   .text10 {
+      @apply text-[10px];
+      line-height: 13px !important;
+   }
+
+   /* Intro page styles */
+   .intro-footer-bg-dark {
+      background: linear-gradient(
+         137.42deg,
+         #13062d 0%,
+         #5a0977 57.83%,
+         #3d1472 76.05%
+      );
+   }
+
+   .button-ripple {
+      animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+   }
+
+   .overview-tab[aria-selected="true"] {
+      @apply !bg-primary-500 !text-white !transition-colors !duration-300;
+   }
+
+   /* .footer { */
+   /* content: ""; */
+   /* opacity: 5.13; */
+   /* transform: translate(-40%, -50%) rotate(8deg); */
+   /* background-color: rgba(203, 122, 241, 1); */
+   /* @apply before:content-[""] before:absolute before:left-[56%] before:bottom-0 before:z-10 before:w-[565px] before:h-[147px] before:blur-[175px] before:rounded-full before:pointer-events-none bg-[#CB7AF1]; */
+   /* } */
+}
+
+@layer base {
+   h1 {
+      @apply text-[48px] font-medium;
+      line-height: 62px;
+   }
+   h2 {
+      @apply text-[40px] font-medium;
+      line-height: 52px;
+   }
+   h3 {
+      @apply text-[36px] font-medium;
+      line-height: 47px;
+   }
+   h4 {
+      @apply text-[32px] font-medium;
+      line-height: 42px;
+   }
+   h5 {
+      @apply text-[30px] font-medium;
+      line-height: 39px;
+   }
+   h6 {
+      @apply text-[28px] font-medium;
+      line-height: 36px;
+   }
+   p {
+      @apply text-[16px];
+      line-height: 21px;
+   }
+   small {
+      @apply text-[14px];
+      line-height: 18px;
+   }
+}
+
+body {
+   font-family: "DM Sans", sans-serif;
+}
+
+/* nav list custom style */
+.nav-accordion span {
+   @apply hidden;
+}
+
+/* Quill Text Editor Custom Style */
+.ql-toolbar {
+   border-top: none !important;
+   border-left: none !important;
+   border-right: none !important;
+   @apply !border-b-gray-300 !p-4;
+}
+
+.quill .ql-container {
+   border: none !important;
+   @apply !p-2;
+}
+
+.quill.page-create .ql-snow .ql-editor {
+   @apply min-h-[390px];
+}
+
+/* Code result viewer */
+.code-result pre {
+   margin-top: 0 !important;
+   margin-bottom: 0 !important;
+   min-height: calc(100vh - 438px) !important;
+}
+
+/* Template card style */
+.template {
+   @apply p-7 bg-primary-50 shadow-none text-gray-700 hover:text-white transition-all duration-300;
+   transition: background-image 0.3s ease-in-out;
+}
+.template:hover {
+   background-image: linear-gradient(162deg, #4222e2 12.07%, #8f7cee 93.09%);
+   box-shadow: 0px 6px 25px rgba(105, 80, 232, 0.33);
+}
+
+/* Toggle A */
+input:checked ~ .dot {
+   transform: translateX(100%);
+}
+
+/* Toggle B */
+input:checked ~ .container {
+   @apply bg-primary-500;
+}
+input:checked ~ .dot {
+   transform: translateX(100%);
+}
+
+/* video play button animation */
+@keyframes ping {
+   75%,
+   100% {
+      transform: scale(2);
+      opacity: 0;
+   }
+}
+.video-play {
+   animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* marque animation */
+.marquee {
+   max-width: 100vw;
+   overflow: hidden;
+   user-select: none;
+}
+.marquee .slide {
+   align-items: center;
+   display: flex;
+   flex-shrink: 0;
+   justify-content: space-around;
+   min-width: 100%;
+}
+.marquee .content {
+   aspect-ratio: 16/10;
+   display: grid;
+   width: 25vmin;
+}
+@media only screen and (max-width: 768px) {
+   .marquee .content {
+      width: 30vmin;
+   }
+}
+
+@media only screen and (max-width: 640px) {
+   .marquee .content {
+      width: 35vmin;
+   }
+}
+
+.marquee.marquee-forward {
+   display: flex;
+}
+.marquee.marquee-reverse {
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+.marquee.marquee-forward .slide {
+   animation: slide-x-forward 40s linear infinite;
+}
+.marquee.marquee-reverse .slide {
+   animation: slide-x-reverse 40s linear infinite;
+}
+
+@keyframes slide-x-forward {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(-100%);
+   }
+}
+@keyframes slide-x-reverse {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(100%);
+   }
+}
+
+/* swiper */
+.swiper-pagination-bullet {
+   @apply !bg-primary-500;
+}
+
+.saved-content .apexcharts-legend {
+   justify-content: center !important;
+}
+
+.saved-content .apexcharts-legend .apexcharts-legend-series {
+   @apply my-0 md:!my-3;
+}
+
+.user-overview .apexcharts-legend {
+   position: absolute !important;
+   left: 0 !important;
+   top: 0 !important;
+}
+
+.shim-blue::after {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   transform: translateX(-100%);
+   background-image: linear-gradient(
+      90deg,
+      rgba(233, 233, 233, 1) 0,
+      rgba(233, 233, 233, 0.9) 50%,
+      rgba(233, 233, 233, 0.8) 100%
+   );
+   animation: shimmer 1s ease-out infinite;
+   content: "";
+}
+
+@keyframes shimmer {
+   100% {
+      transform: translateX(0%);
+      opacity: 0;
+   }
+}

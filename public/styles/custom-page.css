@@ -1,0 +1,12 @@
+body {
+   padding: 0;
+   margin: 0;
+}
+
+.ql-container {
+   max-width: 1280px;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   border: 0 !important;
+}

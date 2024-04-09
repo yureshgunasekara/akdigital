@@ -1,0 +1,95 @@
+/** @type {import('tailwindcss').Config} */
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
+   darkMode: "class",
+   content: [
+      "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+      "./storage/framework/views/*.php",
+      "./resources/views/**/*.blade.php",
+      "./resources/js/**/*.jsx",
+   ],
+
+   theme: {
+      extend: {
+         fontFamily: {
+            sans: ["DM Sans", "sans-serif"],
+         },
+         colors: {
+            primary: {
+               25: "#F7F5FE",
+               50: "#F4F1FE",
+               100: "#E4DCFD",
+               200: "#C8BAFC",
+               300: "#A996F8",
+               400: "#907AF1",
+               500: "#6950E8",
+               600: "#592BE7",
+               700: "#4317CA",
+               800: "#33129C",
+               900: "#240C6E",
+            },
+            success: {
+               25: "#F5FFFC",
+               50: "#EBFEF9",
+               100: "#DCFEF5",
+               200: "#ABFDE7",
+               300: "#79FBDA",
+               400: "#16F8BE",
+               500: "#06D7A1",
+               600: "#05AE82",
+               700: "#04956F",
+               800: "#03634A",
+               900: "#024A38",
+            },
+            warning: {
+               25: "#FFFCF5",
+               50: "#FFF8E6",
+               100: "#FFF4D6",
+               200: "#FFEBB3",
+               300: "#FEDE80",
+               400: "#FED14D",
+               500: "#FEBF06",
+               600: "#DB7E24",
+               700: "#B75F19",
+               800: "#93440F",
+               900: "#7A3109",
+            },
+            error: {
+               25: "#FEF6F8",
+               50: "#FEF1F4",
+               100: "#FDE8ED",
+               200: "#FBD5DE",
+               300: "#F7A6BA",
+               400: "#F37795",
+               500: "#EF4770",
+               600: "#EB194C",
+               700: "#C0113C",
+               800: "#910D2D",
+               900: "#63091F",
+            },
+            gray: {
+               25: "#F9FAFB",
+               50: "#F6F7F8",
+               100: "#f3f4f6",
+               200: "#e5e7eb",
+               300: "#d1d5db",
+               400: "#9ca3af",
+               500: "#6b7280",
+               600: "#4b5563",
+               700: "#374151",
+               800: "#1f2937",
+               900: "#111827",
+            },
+            info: {
+               light: "#F4F4FF",
+               main: "#8C8DFF",
+               dark: "#0C53B7",
+            },
+         },
+         boxShadow: {
+            card: "2px 5px 12px rgba(0, 0, 0, 0.05)",
+         },
+      },
+   },
+});
